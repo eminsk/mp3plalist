@@ -24,7 +24,7 @@ jobs:
         pip install nuitka zstandard
 
     - name: Build with Nuitka
-      run: python -m nuitka --onefile --disable-console --enable-plugin=tk-inter main.py
+      run: python -m nuitka --onefile --disable-console --enable-plugin=tk-inter --accept-dependency-walker-and-downloads main.py
 
     - name: Archive production artifacts
       run: |
