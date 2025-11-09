@@ -15,7 +15,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.13'
+        python-version: '3.12'
 
     - name: Install dependencies
       run: |
@@ -24,7 +24,7 @@ jobs:
         pip install nuitka zstandard
 
     - name: Build with Nuitka
-      run: python -m nuitka --onefile --disable-console --enable-plugin=tk-inter --accept-dependency-walker-and-downloads main.py
+      run: python -m nuitka --onefile --disable-console --enable-plugin=tk-inter --yes main.py
 
     - name: Archive production artifacts
       run: |
