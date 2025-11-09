@@ -24,11 +24,11 @@ jobs:
         pip install nuitka zstandard
 
     - name: Build with Nuitka
-      run: python -m nuitka --standalone main.py
+      run: python -m nuitka --onefile --windows-disable-console --enable-plugin=tk-inter main.py
 
     - name: Archive production artifacts
       run: |
-        tar -czf release.tar.gz -C main.dist .
+        tar -czf release.tar.gz main.exe
 
     - name: Create Release
       id: create_release
