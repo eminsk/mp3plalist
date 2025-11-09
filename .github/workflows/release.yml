@@ -24,7 +24,7 @@ jobs:
         pip install nuitka zstandard
 
     - name: Build with Nuitka
-      run: python -m nuitka --onefile --disable-console --enable-plugin=tk-inter main.py
+      run: python -m nuitka --onefile --windows-console-mode=disable --enable-plugin=tk-inter main.py
       env:
         NUITKA_YES: 1
 
